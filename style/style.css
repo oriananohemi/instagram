@@ -15,6 +15,7 @@ a {
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
 }
 
 .internal-container {
@@ -35,22 +36,19 @@ body {
 
 .container {
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
 }
 
 .header {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 5px 0;
   width: 100%;
 }
 
 .input {
-  border: 1px solid gray;
-  border-radius: 3px;
-  text-align: center;
-  padding: 5px 10px;
+  display: none;
 }
 
 /* .input::before {
@@ -76,8 +74,11 @@ body {
   align-items: center;
   display: flex;
   justify-content: left;
-  position: relative;
   margin: 20px 0 40px;
+}
+
+.profile-img {
+  position: relative;
 }
 
 .img-profile {
@@ -93,8 +94,8 @@ body {
   border-radius: 50%;
   font-size: 25px;
   position: absolute;
-  bottom: 10%;
-  left: 15%;
+  bottom: 0;
+  left: 50%;
 }
 
 .item {
@@ -134,7 +135,8 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 60%;
+  width: 100%;
+  height: 100%;
 }
 
 .close {
@@ -149,4 +151,17 @@ body {
 
 .hidden {
   display: none;
+}
+
+@media (min-width: 700px) {
+  .container {
+    width: 90%;
+  }
+
+  .input {
+    border: 1px solid gray;
+    border-radius: 3px;
+    text-align: center;
+    padding: 5px 10px;
+  }
 }
