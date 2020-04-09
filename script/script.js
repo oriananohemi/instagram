@@ -7,7 +7,7 @@ const modal = document.getElementById("modal");
 const loadJSON = callback => {
   let xobj = new XMLHttpRequest();
   xobj.overrideMimeType("application/json");
-  xobj.open("GET", "../images.json", true);
+  xobj.open("GET", "./images.json", true);
   xobj.onreadystatechange = () => {
     if (xobj.readyState === 4 && xobj.status === 200) {
       callback(xobj.responseText);
