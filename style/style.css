@@ -220,6 +220,7 @@ body {
 
   .buttons-name {
     display: flex;
+    font-size: 14px;
   }
 
   .img-collection {
@@ -229,14 +230,11 @@ body {
 
 @media (min-width: 900px) {
   .container {
-    width: 75%;
+    width: 65%;
   }
 
   .img-profile {
     height: 180px;
     width: 180px;
-  }
-  .profile {
-    gap: 30px;
   }
 }
