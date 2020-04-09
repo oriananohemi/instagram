@@ -39,7 +39,7 @@ const loadImg = data => {
 };
 
 const nextId = id => {
-  if (id + 1 !== 10) {
+  if (id + 1 !== 9) {
     next.style.display = "block";
     return id + 1;
   } else {
@@ -48,7 +48,7 @@ const nextId = id => {
 };
 
 const previousId = id => {
-  if (id - 1 !== 0) {
+  if (id - 1 !== -1) {
     previous.style.display = "block";
     return id - 1;
   } else {
