@@ -38,19 +38,29 @@ const loadImg = data => {
   }
 };
 
+const nextId = id => {
+  if (id + 1 !== 10) {
+    next.style.display = "block";
+    return id + 1;
+  } else {
+    next.style.display = "none";
+  }
+};
+
+const previousId = id => {
+  if (id - 1 !== 0) {
+    previous.style.display = "block";
+    return id - 1;
+  } else {
+    previous.style.display = "none";
+  }
+};
+
 function show(evento) {
   const id = Number(evento.target.getAttribute("data-id"));
-  if (0 < id < 10) {
-    addImageToModalById(id);
-    next.setAttribute(
-      "data-id",
-      id + 1 !== 10 ? id + 1 : (next.style.display = "none")
-    );
-    previous.setAttribute(
-      "data-id",
-      id - 1 !== 0 ? id - 1 : (previous.style.display = "none")
-    );
-  }
+  addImageToModalById(id);
+  next.setAttribute("data-id", nextId(id));
+  previous.setAttribute("data-id", previousId(id));
 }
 
 function addImageToModalById(id) {
