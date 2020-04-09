@@ -160,6 +160,19 @@ body {
   right: 0;
 }
 
+.fas {
+  color: white;
+  font-size: 30px;
+}
+.fa-chevron-right {
+  position: absolute;
+  right: 0;
+}
+
+.fa-chevron-left {
+  position: absolute;
+  left: 0;
+}
 .hidden {
   display: none;
 }

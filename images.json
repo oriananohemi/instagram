@@ -1,0 +1,41 @@
+{
+  "path_root": "./img/",
+  "images": [
+    {
+      "title": "image one",
+      "name": "pub1.jpeg"
+    },
+    {
+      "title": "image two",
+      "name": "pub2.jpeg"
+    },
+    {
+      "title": "image three",
+      "name": "pub3.jpeg"
+    },
+    {
+      "title": "image for",
+      "name": "pub4.jpeg"
+    },
+    {
+      "title": "image five",
+      "name": "pub5.jpeg"
+    },
+    {
+      "title": "image six",
+      "name": "pub6.jpeg"
+    },
+    {
+      "title": "image seven",
+      "name": "pub7.jpeg"
+    },
+    {
+      "title": "image eight",
+      "name": "pub8.jpeg"
+    },
+    {
+      "title": "image nine",
+      "name": "pub9.jpeg"
+    }
+  ]
+}
