@@ -1,3 +1,9 @@
+const next = document.getElementById("next");
+
+const previous = document.getElementById("previous");
+
+const modal = document.getElementById("modal");
+
 const loadJSON = callback => {
   let xobj = new XMLHttpRequest();
   xobj.overrideMimeType("application/json");
@@ -25,22 +31,34 @@ const loadImg = data => {
     const path = `${pathRoot}${image[i].name}`;
     img.setAttribute("src", path);
     img.setAttribute("class", "img");
+    img.addEventListener("click", show);
+    img.setAttribute("data-id", container.childNodes.length);
+    img.setAttribute("alt", name);
     container.appendChild(img);
   }
 };
 
-function cargar() {
-  const collections = document.querySelectorAll("#collection > img");
-  collections.forEach(collection => collection.addEventListener("click", show));
+function show(evento) {
+  const id = Number(evento.target.getAttribute("data-id"));
+  if (0 < id < 10) {
+    addImageToModalById(id);
+    next.setAttribute(
+      "data-id",
+      id + 1 !== 10 ? id + 1 : (next.style.display = "none")
+    );
+    previous.setAttribute(
+      "data-id",
+      id - 1 !== 0 ? id - 1 : (previous.style.display = "none")
+    );
+  }
 }
 
-cargar();
-
-let modal = document.getElementById("modal");
-
-function show(evento) {
-  let image = evento.target;
-  let copyimg = image.cloneNode(true);
+function addImageToModalById(id) {
+  const images = document.querySelectorAll("img[data-id]");
+  const image = Array.from(images).find(
+    image => image.getAttribute("data-id") == id
+  );
+  const copyimg = image.cloneNode(true);
   modal.appendChild(copyimg);
   modal.classList.remove("hidden");
 }
@@ -48,13 +66,25 @@ function show(evento) {
 document.getElementById("close").addEventListener("click", hidden);
 
 function hidden() {
-  let copyimg = modal.getElementsByClassName("img")[0];
-  modal.removeChild(copyimg);
   modal.classList.add("hidden");
+  deleteModalImg();
 }
 
-document.getElementById("behind").addEventListener("click", behind);
+function deleteModalImg() {
+  let copyimg = modal.getElementsByClassName("img")[0];
+  modal.removeChild(copyimg);
+}
 
-function behind(evento) {
-  console.log(evento.target);
+next.addEventListener("click", showNextImg);
+
+function showNextImg(evento) {
+  deleteModalImg();
+  show(evento);
+}
+
+previous.addEventListener("click", showPreviousImg);
+
+function showPreviousImg(evento) {
+  deleteModalImg();
+  show(evento);
 }
