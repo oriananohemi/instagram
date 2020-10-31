@@ -16,5 +16,5 @@ Replica del perfil de usuario de Instagram
 
 # NOTA:
 
-Tambien realice una replica de la pagina de Home y se encuentra en el repo [Home Instagram](https://github.com/oriananohemi/instagram)
+Tambien realice una replica de la pagina de Home y se encuentra en el repo [Home Instagram](https://github.com/oriananohemi/instagram-home)
 o puede clickear el icono <img src="https://img.icons8.com/fluent-systems-regular/24/000000/home.png"/> dentro del demo de este proyecto. [Demo Perfil Instagram](https://oriananohemi.github.io/instagram/)
